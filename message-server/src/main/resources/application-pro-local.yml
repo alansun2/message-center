@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxxx
+    username: xxxx
+    password: xxxx
+  redis:
+    redisson:
+      file: classpath:config/redisson-config-dev.yml
+  rabbitmq:
+    addresses: xxxx
+    username: xxxx
+    password: xxxx
+    virtual-host: /test
+    listener:
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: true
+        retry:
+          enabled: true
+          multiplier: 2
+          initial-interval: 3000ms
+    publisher-confirm-type: correlated
+    publisher-returns: true
+
+logging:
+  config: classpath:log4j2-spring-dev.xml

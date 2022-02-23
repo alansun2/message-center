@@ -1,0 +1,19 @@
+singleServerConfig:
+  idleConnectionTimeout: 10000
+  connectTimeout: 10000
+  timeout: 10000
+  retryAttempts: 3
+  retryInterval: 1500
+  password: 123456
+  subscriptionsPerConnection: 5
+  clientName: test
+  address: "redis://xxxx"
+  subscriptionConnectionMinimumIdleSize: 1
+  subscriptionConnectionPoolSize: 50
+  connectionMinimumIdleSize: 10
+  #Redis connection maximum pool size
+  connectionPoolSize: 1000
+  database: 0
+  dnsMonitoringInterval: 5000
+codec: !<org.redisson.codec.JsonJacksonCodec> {}
+transportMode: "NIO"

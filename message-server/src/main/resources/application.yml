@@ -1,0 +1,15 @@
+server:
+  port: 9040
+  servlet:
+    context-path: /message
+
+spring:
+  application:
+    name: message-server
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+
+message:
+  default-to-user-name: xxxx

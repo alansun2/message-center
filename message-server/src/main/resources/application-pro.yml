@@ -1,0 +1,31 @@
+server:
+  tomcat:
+    threads:
+      max: 1000
+      min-spare: 30
+    connection-timeout: 5000ms
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxxx
+    username: xxxx
+    password: xxxx
+  redis:
+    redisson:
+      file: classpath:config/redisson-config-pro.yml
+  rabbitmq:
+    addresses: xxxx
+    username: xxxx
+    password: xxxx
+    virtual-host: /test
+    listener:
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: true
+    publisher-returns: true
+    publisher-confirm-type: correlated
+    address-shuffle-mode: inorder
+
+logging:
+  config: classpath:log4j2-spring-pro.xml
